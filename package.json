@@ -1,26 +1,11 @@
 {
-  "name": "narantula",
-  "version": "1.0.0",
-  "description": "",
-  "module": "src/index.ts",
-  "scripts": {
-    "start": "node --experimental-specifier-resolution=node --loader ts-node/esm  src/index.ts"
-  },
+  "name": "@narantula/root",
+  "version": "0.0.1",
   "author": "Tanner",
   "type": "module",
+  "private": true,
   "license": "MIT",
-  "devDependencies": {
-    "@types/selenium-webdriver": "^4.1.21",
-    "@typescript-eslint/eslint-plugin": "^6.16.0",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-config-standard-with-typescript": "^43.0.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^16.5.0",
-    "eslint-plugin-promise": "^6.1.1",
-    "prettier": "3.1.1",
-    "selenium-webdriver": "^4.16.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
-  }
+  "workspaces": [
+    "packages/*"
+  ]
 }
