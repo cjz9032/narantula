@@ -1,21 +1,18 @@
 import alinks from "@narantula/backend/public/output.csv";
 import "./App.css";
 
-const imagesRecord = import.meta.glob("../../nat-backend/public/imgs/*.*", {
-  eager: true,
-});
-const images: string[] = Object.values(imagesRecord).map(t=>t.default);
-
-
-// 遍历所有图片
-// for (const path in images) {
-//   // 在这里可以对导入的图片进行操作
-//   console.log(images[path]);
-// }
+const imagesRecord: Record<string, { default: string }> = import.meta.glob(
+  "../../nat-backend/public/imgs/*.*",
+  {
+    eager: true,
+  },
+);
+const images: string[] = Object.values(imagesRecord).map((t) => t.default);
 
 function App() {
   return (
     <>
+      <h3>Texts</h3>
       <ul>
         {(
           alinks as {
@@ -30,6 +27,8 @@ function App() {
           </li>
         ))}
       </ul>
+      <hr />
+      <h3>Images</h3>
       <div>
         {images.map((image) => (
           <img width={50} src={image} alt="" />
